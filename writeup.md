@@ -24,7 +24,7 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 
 * All obtained hough lines being separated into two heaps denoting left and right lanes according to their slope ('m' in y = mx + b equation). As vertical axis increases from top to down, negative slopes go to the left heap, positive - to the right.
 * Average slopes and intercepts (m's and b's in y=mx+b) within each heap. It yields data for 2 linear functions at maximum (one for left and one right lane)
-* compute coordinates of intersection with the button and the upper edges of the region of interest ccording to obtained functions.
+* compute coordinates of intersection with the button and the upper edges of the region of interest according to obtained functions.
 * Draw those averaged lines accross the full extent of the region of interest
 
 Steps listed above implemented in separated_lines() and draw_single_line() functions
@@ -56,7 +56,7 @@ To improve detection I've implemented two techniques:
 * filtering out of lines with too steep and too gradual slopes, removing mostly vertical and horizontal lines, which are of no interest for the task
 * among those remaining after the previous step, filter out the outliers to eliminate their influence on averaging.
 
-These operations are being applied within a draw_single_line() function which is in turn being called from my implementation of draw_line(). Operation are actually implemented at the following functions:
+These operations are being applied within a draw_single_line() function which is in turn being called from my implementation of draw_line(). Operations are actually implemented at the following functions:
 
 * reject_outliers()
 * reject_extremes()
